@@ -1,0 +1,298 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
+    <!-- End Bootstrap CSS -->
+
+        <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+
+   <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(123, 202, 123);
+        }
+        .packsContainer{
+            background-color: white;
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            border-radius: 6px;
+            padding: 13px;
+            margin: 0 15px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+
+        }
+        .packsContainer header{
+            position: relative;
+            font-size: 20px;
+            font-weight: 600px;
+            color:black;
+        }
+        .packsContainer ::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+        }
+
+        .packsContainer form{
+            position: relative;
+            min-height: 490px;
+            background-color: white;
+            margin-top: 16px;
+
+        }
+        .packsContainer form .details personal{
+            margin-top: 10px;
+        }
+        .packsContainer form .title{
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500px;
+            margin: 6px 0;
+            color: black;
+        }
+        .packsContainer form .fields {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+        form .fields .input1 {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% / 3 - 15px);
+            margin: 4px 0;
+
+        }
+        .input1 input{
+            outline: none;
+            border-radius: 5px;
+            border: 1px solid gray;
+            padding: 0 15px;
+            font-size: 14px;
+            font-weight: 400px;
+            height: 42px;
+            margin: 8px 0;
+        }
+        .input1 input:is(:focus,:valid){
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 13);
+        }
+        .input1 input[type="date"]{
+            color: grey;
+        }
+        .input1 input[type="date"]:valid{
+            color:rgb(42, 41, 41)
+        }
+        .input1 label{
+            font-size: 15px;
+            font-weight: 500px;
+
+        }
+        .kmdropdown {
+                float: left;
+                overflow: hidden;
+                }
+
+        .kml{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+              
+
+        
+   </style>
+    
+
+</head>
+<body>
+     
+
+    <div class="packsContainer">
+        <header>Enrollment Form</header>
+        <form onsubmit="showMessage()">
+            <div>
+                <div class="form first">
+                    <div class="details personal">
+                        <span class="title">Personal Information</span>
+
+                        <div class="fields">
+                            <div class="input1">
+                                <label for="">Full Name: </label>
+                                <input type="text" placeholder="Last Name, First Name MI." required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Date of Birth: </label>
+                                <input type="date" placeholder="Enter your birth date" required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Email: </label>
+                                <input type="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Nationality </label>
+                                <input type="text" placeholder="Enter your Nationality." required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Place of Birth: </label>
+                                <input type="text" placeholder="Enter your birth place" required>
+                            </div>
+                            
+
+                            <div class="input1">
+                                <label for="">Phone </label>
+                                <input type="tel" id="phone" name="phone" maxlength="11" placeholder="09*********" required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Weight</label>
+                                <input type="text" placeholder="Enter your weight in kg" required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Height</label>
+                                <input type="text" placeholder="Enter your height in cm" required>
+                            </div>
+                            
+                            <div class="input1">
+                                <label for="">Facebook Account </label>
+                                <input type="text" placeholder="Enter your Account" required>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Civil Status</label>
+                                <select id="kmstatus" name="kmstatus">
+                                    <option value="Single">Single</option>
+                                    <option value="Married">Married</option>
+                                    <option value="Widowed">Widowed</option>
+                                    <option value="Annulled">Annulled</option>
+                                </select>
+                            </div>
+
+                            <div class="input1">
+                                <label for="">Sex</label>
+                                <select id="kmSex" name="kmSex">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="input1">
+                                <label for="">Religion</label>
+                                <select id="cars" name="cars">
+                                    <option value="Roman Catholic">Roman Catholic</option>
+                                    <option value="Islam">Islam</option>
+                                    <option value="Iglesia ni Cristian">Iglesia ni Cristian</option>
+                                    <option value="Other Christians">Philippine Independent Church</option>
+                                    <option value="Other Christians">Other Christians</option>
+
+                                  </select>
+                        </div>
+                        <div class="input1">
+                            <label for="">Address</label>
+                            <textarea id="kmadd" name="kmadd" rows="4" cols="50" required placeholder="Purok/Barangay/City/Province"></textarea>
+                        </div>
+
+                        <div class="input1">
+                            <label for="">Zip Code </label>
+                            <input type="text" placeholder="Enter your zip code" required>
+                        </div>
+
+                        <div class="input1">
+                            <label for="">Dswd Household No. </label>
+                            <input type="text" placeholder="Enter your Dswd Household No." required>
+                        </div>
+
+                        
+
+
+                        <div class="input1">
+                            <span class="title">Elementary Background:</span>
+                            <label for="">School</label>
+                            <input type="text" placeholder="School" required>
+                        
+                            <label for="">Year Graduated</label>
+                            <input type="text" placeholder="Year Graduated" required>
+                       
+                            <label for="">General Average</label>
+                            <input type="text" placeholder="Enter your General Average" required>
+                        </div>
+
+                        <div class="input1">
+                            <span class="title"> Highschool  Background:</span>
+                            <label for="">School</label>
+                            <input type="text" placeholder="School" required>
+                        
+                            <label for="">Year Graduated</label>
+                            <input type="text" placeholder="Year Graduated" required>
+                       
+                            <label for="">General Average</label>
+                            <input type="text" placeholder="Enter your General Average" required>
+                        </div>
+
+                        <div class="input1">
+                            <span class="title"> Senior Highschool Background:</span>
+                            <label for="">School</label>
+                            <input type="text" placeholder="School" required>
+                        
+                            <label for="">Year Graduated</label>
+                            <input type="text" placeholder="Year Graduated" required>
+                       
+                            <label for="">General Average</label>
+                            <input type="text" placeholder="Enter your General Average" required>
+                        </div>
+
+                        
+
+                        <div class="mb-3">
+                            <span class="title"> Files</span>
+                            <label for="formFileSm" class="form-label">PSa</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                         
+                          
+                            <label for="formFileSm" class="form-label">Good Moral</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                         
+                         
+                            <label for="formFileSm" class="form-label">Form 137</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                          
+                            <label for="formFileSm" class="form-label">Picture 2x2</label>
+                            <input class="form-control form-control-sm" id="formFileSm" type="file">
+                          </div>
+
+                          
+                          <div class="col-12">
+                            <a class="btn btn-primary" href="enrollmentform.html" role="button">Delete</a>
+                            <button class="btn btn-success" type="submit" >Submit </button>
+                          </div>
+                        </div>
+                     </div>
+                 </div>
+             </form>
+             <script>
+                function showMessage() {
+                    alert("Form submitted successfully!");
+                }
+            </script>
+ 
+</body>
+</html>
